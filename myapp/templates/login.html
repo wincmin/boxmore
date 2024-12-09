@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="opcoes">Menu</div>
+        <div class="nav-title">Minha Conta</div>
+        <div class="config">⚙️</div>
+    </nav>
+
+    <div class="container">
+        <form action="#" method="POST">
+            <div class="perfil">
+                <img src="img/anais.img" alt="Foto do perfil" class="foto">
+            </div>
+            <div class="nome">
+                <label for="nome">Nome:</label>
+                <input id="nome" type="text" name="nome" placeholder="Insira seu nome aqui" required>
+            </div>
+            <div class="email">
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" name="email" placeholder="Insira seu e-mail aqui" required>
+            </div>
+            <div class="cpf">
+                <label for="cpf">CPF:</label>
+                <input id="cpf" type="text" name="cpf" placeholder="Insira seu CPF" required>
+            </div>
+            <div class="data">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input id="data_nascimento" type="date" name="data_nascimento" required>
+            </div>
+            <div class="senha">
+                <label for="senha">Senha:</label>
+                <input id="senha" type="password" name="senha" placeholder="Insira sua senha aqui" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

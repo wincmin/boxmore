@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darksalmon;
+    padding: 10px 40px;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.navbar .opcoes, .navbar .nav-title, .navbar .config {
+    font-size: 18px;
+}
+
+.container {
+    background-color: rgb(245, 195, 179);
+    padding: 20px 25px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container .nome,
+.container .email,
+.container .cpf,
+.container .data,
+.container .senha {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: darksalmon;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #e6a799;
+}
+
+.container img.foto {
+    max-width: 50%;
+    height: 40%;
+    margin-bottom: 20px;
+}

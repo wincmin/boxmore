@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Boxmore</title>
+    <link rel="icon" href="static/img/loja1.png" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c1a74;
+            padding: 15px 0;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        header nav ul li a:hover {
+            color: #eebde3;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        .sobre-nos {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sobre-nos h1 {
+            text-align: center;
+            color: #2c1a74;
+        }
+
+        .sobre-nos p {
+            line-height: 1.6;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .sobre-nos h2 {
+            color: #2c1a74;
+            margin-top: 30px;
+        }
+
+        .sobre-nos ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sobre-nos ul li {
+            background-color: #eebde3;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        .sobre-nos ul li strong {
+            color: #2c1a74;
+        }
+
+        footer {
+            background-color: #2c1a74;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sobre-nos">
+            <h1>Sobre Nós</h1>
+            <p>Bem-vindo à <strong>Boxmore</strong>, onde praticidade e qualidade se encontram!</p>
+
+            <p>A <strong>Boxmore</strong> nasceu de uma ideia simples: oferecer os melhores produtos com a experiência de compra mais fácil e agradável possível. Nosso objetivo é proporcionar aos nossos clientes uma seleção de roupas, eletrônicos e livros que atendam às suas necessidades diárias, tudo com o melhor custo-benefício.</p>
+
+            <!-- <p>Na nossa loja, acreditamos que qualidade não precisa ser cara. Trabalhamos constantemente para garantir que nossos produtos sejam de alta qualidade, ao mesmo tempo em que mantemos um preço justo. Nossa missão é oferecer uma experiência de compra sem complicação e sempre com o apoio de uma equipe pronta para ajudar você em cada etapa da sua jornada de compra.</p> -->
+
+            <h2>Por que escolher a nossa loja?</h2>
+            <ul>
+                <li><strong>Qualidade garantida:</strong> Produtos de marcas confiáveis e de alta qualidade.</li>
+                <li><strong>Variedade:</strong> Uma ampla gama de opções em roupas, eletrônicos e livros.</li>
+                <li><strong>Atendimento personalizado:</strong> Estamos aqui para garantir a sua satisfação.</li>
+                <li><strong>Compromisso com o cliente:</strong> Seu feedback é muito importante para nós.</li>
+            </ul>
+
+            <p>Seja para renovar seu guarda-roupa, comprar um novo gadget ou adquirir aquele livro que você tanto queria, a <strong>Boxmore</strong> está aqui para tornar sua experiência de compra única.</p>
+
+            <!-- <h2>Nosso Compromisso</h2>
+            <p>Nosso compromisso é sempre com a sua satisfação. Trabalhamos para oferecer um serviço de alta qualidade e com respeito ao meio ambiente, incentivando um consumo mais consciente.</p>
+
+            <p>Agradecemos por escolher a <strong>Loja Online</strong>. Estamos sempre aqui para ajudar você a encontrar o que há de melhor!</p> -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Boxmore. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
