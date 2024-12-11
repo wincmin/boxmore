@@ -41,31 +41,31 @@
     
     <div class="search-bar">
       <form method="get" action="{% url 'busca_produtos' %}">
-        <input type="text" name="query" placeholder="Pesquisar produtos...">
+        <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}">
         <button type="submit" class="btn btn-primary">Buscar</button>
       </form>
     </div>
   
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Filtros
+  </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Filtragem</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Filtragem</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       <div class="modal-body">
-          <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}">
+          {% comment %} <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}"> {% endcomment %}
       
-          <input type="text" name="categoria" placeholder="Categoria" value="{{ request.GET.categoria }}">
-          <input type="text" name="marca" placeholder="Marca" value="{{ request.GET.marca }}">
+          <input type="text" name="categoria" placeholder="Categoria" value="{{ request.GET.categoria }}"><br>
+          <input type="text" name="marca" placeholder="Marca" value="{{ request.GET.marca }}"><br>
           <input type="text" name="cor" placeholder="Cor" value="{{ request.GET.cor }}">
           
           <input type="number" name="preco_min" placeholder="Preço Mínimo" value="{{ request.GET.preco_min }}">
@@ -81,11 +81,8 @@
   </div>
 </div>
   
-  </nav>
   
         {% comment %} <button type="submit">🔍</button> {% endcomment %}
-      </form>
-    </div>
 
   
 

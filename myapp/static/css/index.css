@@ -275,3 +275,54 @@ body {
   cursor:auto
 }
 
+.model-title {
+  background-color: #2c1a74;
+  align-items: center;
+
+}
+
+.btn.btn-primary {
+    padding: 7px 15px;
+    color: #2c1a74;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    /* margin-top: 10px; */
+
+
+}
+
+.btn.btn-primary:hover{
+
+  background-color: #2c1a74;
+  color: white;
+}
+
+/* .search-bar {
+  display: flex;
+  align-items: center;
+  width: 75%;
+  margin: 0 20px; 
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 25px;
+  border: 1px solid #cccccc;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 7px 15px;
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  color: #2c1a74;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #2c1a74;
+  color: white;
+} */
