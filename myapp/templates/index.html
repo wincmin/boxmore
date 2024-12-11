@@ -6,23 +6,89 @@
   <title>Boxmore</title>
   <link rel="icon" href="static/img/loja1.png" type="image/png">
   {% load static %}
-
-  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+
+    .modal-backdrop {
+      display: none !important;
+    }
+  </style>
 
 </head>
 <body class="body">
-
+{% comment %}   
+  <form method="GET" action="{% url 'busca_produtos' %}">
+    <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}">
+    
+    <input type="text" name="categoria" placeholder="Categoria" value="{{ request.GET.categoria }}">
+    <input type="text" name="marca" placeholder="Marca" value="{{ request.GET.marca }}">
+    <input type="text" name="cor" placeholder="Cor" value="{{ request.GET.cor }}">
+    
+    <input type="number" name="preco_min" placeholder="Preço Mínimo" value="{{ request.GET.preco_min }}">
+    <input type="number" name="preco_max" placeholder="Preço Máximo" value="{{ request.GET.preco_max }}">
+    
+    <button type="submit">Buscar</button>
+  </form>
+   {% endcomment %}
   <nav class="navbar">
     <div class="navbar-title">Boxmore</div>
+    
     <div class="search-bar">
-      <input type="text" placeholder="Pesquisar produtos...">
-      <a href="/busca-roupas.html">
-        <button>🔍</button>
-      </a>
-
+      <form method="get" action="{% url 'busca_produtos' %}">
+        <input type="text" name="query" placeholder="Pesquisar produtos...">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
     </div>
+  
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Filtragem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}">
+      
+          <input type="text" name="categoria" placeholder="Categoria" value="{{ request.GET.categoria }}">
+          <input type="text" name="marca" placeholder="Marca" value="{{ request.GET.marca }}">
+          <input type="text" name="cor" placeholder="Cor" value="{{ request.GET.cor }}">
+          
+          <input type="number" name="preco_min" placeholder="Preço Mínimo" value="{{ request.GET.preco_min }}">
+          <input type="number" name="preco_max" placeholder="Preço Máximo" value="{{ request.GET.preco_max }}">
+    
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  </nav>
+  
+        {% comment %} <button type="submit">🔍</button> {% endcomment %}
+      </form>
+    </div>
+
+  
+
     <div class="menu">
       <!-- <a href="#minha-conta">Minha Conta</a> -->
       <a href="{% url 'suporte' %}">Suporte</a>
@@ -39,7 +105,25 @@
       </div>
     </div>
   </nav>
-
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="banner">
     <img src="img/banner4.png" alt="Promoções especiais" class="banner-image">
@@ -61,8 +145,11 @@
           <img src="{% static produto.imagem %}" alt="{{ produto.nome_produto }}">
           <h3>{{ produto.nome_produto }}</h3>
           <p>R$ {{ produto.preco }}</p>
+          <p>Categoria: {{ produto.categoria }}</p>
+          <p>Marca: {{ produto.marca }}</p>
+          <p>Cor: {{ produto.cor }}</p>
           <button class="add-carrinho">
-            <a href="">Adicionar ao Carrinho</a>
+            <a href="#">Adicionar ao Carrinho</a>
           </button>
         </div>
       {% empty %}
@@ -82,9 +169,9 @@
 
     </div>
     <div class="redes-sociais">
-      <a href="#"><img src="img/face.img" alt="Facebook"></a>
-      <a href="#"><img src="img/insta.img" alt="Instagram"></a>
-      <a href="#"><img src="img/whats.img" alt="Twitter"></a>
+      <a href="#"><img src="static/img/face.img" alt="Facebook"></a>
+      <a href="#"><img src="static/img/insta.img" alt="Instagram"></a>
+      <a href="#"><img src="static/img/whats.img" alt="Twitter"></a>
     </div>
   </footer>
 </body>
