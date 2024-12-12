@@ -6,37 +6,35 @@
   <title>Boxmore</title>
   <link rel="icon" href="static/img/loja1.png" type="image/png">
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Carregar o Bootstrap -->
+    <link href="{% static 'bootstrap-5.3.3-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+   
+    <!-- Carregar o seu CSS personalizado depois do Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <style>
 
     .modal-backdrop {
       display: none !important;
     }
+    
+  
   </style>
+
+
+
+
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
 
 </head>
 <body class="body">
-{% comment %}   
-  <form method="GET" action="{% url 'busca_produtos' %}">
-    <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}">
-    
-    <input type="text" name="categoria" placeholder="Categoria" value="{{ request.GET.categoria }}">
-    <input type="text" name="marca" placeholder="Marca" value="{{ request.GET.marca }}">
-    <input type="text" name="cor" placeholder="Cor" value="{{ request.GET.cor }}">
-    
-    <input type="number" name="preco_min" placeholder="Preço Mínimo" value="{{ request.GET.preco_min }}">
-    <input type="number" name="preco_max" placeholder="Preço Máximo" value="{{ request.GET.preco_max }}">
-    
-    <button type="submit">Buscar</button>
-  </form>
-   {% endcomment %}
-  <nav class="navbar">
+
+  <nav class="navbar" id='patrao'>
     <div class="navbar-title">Boxmore</div>
     
     <div class="search-bar">
@@ -62,7 +60,7 @@
           </button>
         </div>
       <div class="modal-body">
-          {% comment %} <input type="text" name="query" placeholder="Pesquisar produto" value="{{ request.GET.query }}"> {% endcomment %}
+
       
           <input type="text" name="categoria" placeholder="Categoria" value="{{ request.GET.categoria }}"><br>
           <input type="text" name="marca" placeholder="Marca" value="{{ request.GET.marca }}"><br>
@@ -79,15 +77,9 @@
       </div>
     </div>
   </div>
-</div>
-  
-  
-        {% comment %} <button type="submit">🔍</button> {% endcomment %}
-
-  
+</div> 
 
     <div class="menu">
-      <!-- <a href="#minha-conta">Minha Conta</a> -->
       <a href="{% url 'suporte' %}">Suporte</a>
       <a href="{% url 'carrinho' %}">🛒</a>
       <div class="dropdown">
@@ -96,12 +88,11 @@
           <a href="#perfil">Perfil</a>
           <a href="#perfil">Favoritos</a>
           <a href="#perfil">Configuações</a>
-          <!-- <a href="#roupas">Roupas</a>
-          <a href="#acessorios">Acessórios</a> -->
         </div>
       </div>
     </div>
   </nav>
+
   <div class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
