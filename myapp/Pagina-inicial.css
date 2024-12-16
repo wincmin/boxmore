@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    /* text-align: center; */
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    /* text-align: center; */
+    
+}
+h3{
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header .menu {
+    
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header .menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background: url('banner.jpg') no-repeat center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero .btn {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.produto {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px; /* Ajuste a largura conforme necessário */
+    text-align: center;
+    flex-shrink: 0; /* Impede que o produto encolha */
+}
+
+.produtos .grid {
+    display: flex;
+    flex-wrap: nowrap; /* Garante que os produtos fiquem em uma linha */
+    justify-content: space-between; /* Distribui os produtos com espaços entre eles */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    margin-top: 150px;
+    overflow-x: auto; /* Permite rolagem horizontal se os produtos excederem o container */
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+
+
+/* Botões de Navegação */
+.carousel-button {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-10%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+  }
+  .prev {
+    left: 120px;
+  }
+  
+  .next {
+    right: 120px;
+  }
+
+.produto {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+
+.produto img {
+    
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.produto .btn {
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.sobre, .contato {
+
+    padding: 50px 0;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contato input, .contato textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contato button {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.carrinho, .pagamento {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.carrinho ul {
+    list-style: none;
+    padding: 0;
+}
+
+.carrinho li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.carrinho button {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Pequenas melhorias no estilo */
+.carousel-container:hover .carousel-button {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .carousel-container {
+    margin-left: 500px;
+    display: flex;
+    /* overflow-x: scroll; Adiciona a rolagem horizontal se necessário */
+    padding: 20px 0;
+    gap: 15px;
+}
+
+
+.carrinho-icon {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+#carrinho-contagem {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+}
+
+  /* Estilos do contêiner principal */
+/* .landing-container {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+  } */

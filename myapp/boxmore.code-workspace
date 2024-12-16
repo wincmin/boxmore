@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../teste do chatgpt"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "boxmore"
+	}
+}

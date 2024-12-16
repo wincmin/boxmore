@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxmore</title>
+      <link rel="icon" href="img/loja1.png" type="image/png">
+    <link rel="stylesheet" href="css/carrinho.css">
+</head>
+<body>
+
+    <h1>Carrinho de Compras</h1>
+
+    <p>O carrinho está vazio. </p>
+
+
+  
+    <!-- Botão para mostrar carrinho -->
+    <button class="botao-carrinho" id="botaoMostrarCarrinho">Mostrar Carrinho</button>
+
+    </button>
+
+    <!-- Carrinho de compras -->
+    <div class="carrinho" id="carrinho">
+        <h2>Itens no Carrinho</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="produto-calca">
+                    <td>Calça Jeans</td>
+                    <td><input type="number" value="0" min="0" max="20" class="quantidade"></td>
+                    
+                    <td class="total">R$ 50,00</td>
+                </tr>
+                <tr class="produto-camiseta">
+                    <td>Camiseta</td>
+                    <td><input type="number" value="0" min="0" max="20" class="quantidade"></td>
+                    <td>R$ 10,99</td>
+                    <td class="total">R$ 10,00</td>
+                </tr>
+                <tr class="produto-jaqueta">
+                    <td>Jaqueta</td>
+                    <td><input type="number" value="0" min="0" max="20" class="quantidade"></td>
+                    <td>R$ 4,77</td>
+                    <td class="total">R$ 120,00</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <div class="detalhes-compra" id="detalhesCompra">
+        <p><strong>Subtotal:</strong> R$ <span id="subtotal">0,00</span></p>
+        <button class="botao-finalizar">Finalizar compra</button>
+        <button class="botao-continuar">
+            <a href="Pagina-inicial.html" alt="Home">Continuar comprando</a>
+            <!-- Botão para zerar o carrinho -->
+        <button class="botao-zerar" id="botaoZerarCarrinho">Zerar Carrinho</button>
+
+        </button>
+    </div>
+ <script>
+        // Lógica para mostrar/ocultar o carrinho
+const botaoMostrarCarrinho = document.getElementById('botaoMostrarCarrinho');
+const carrinho = document.getElementById('carrinho');
+const detalhesCompra = document.getElementById('detalhesCompra');
+
+botaoMostrarCarrinho.addEventListener('click', () => {
+    const estaVisivel = carrinho.style.display === 'none';
+    carrinho.style.display = estaVisivel ? 'none' : 'block';
+    detalhesCompra.style.display = estaVisivel ? 'none' : 'block';
+    botaoMostrarCarrinho.textContent = estaVisivel ? 'Mostrar Carrinho' : 'Esconder Carrinho';
+});
+
+// Atualiza os totais sempre que a quantidade mudar
+const inputsQuantidade = document.querySelectorAll('.quantidade');
+const subtotalSpan = document.getElementById('subtotal');
+
+inputsQuantidade.forEach(input => {
+    input.addEventListener('input', function () {
+        const row = input.closest('tr');
+        const precoUnitario = parseFloat(row.cells[2].textContent.replace('R$ ', '').replace(',', '.'));
+        const quantidade = parseInt(input.value);
+        const total = precoUnitario * quantidade;
+        row.querySelector('.total').textContent = `R$ ${total.toFixed(2)}`;
+
+        // Atualiza o subtotal
+        atualizarSubtotal();
+    });
+});
+
+// Atualiza o subtotal
+function atualizarSubtotal() {
+    let subtotal = 0.00;
+    document.querySelectorAll('.total').forEach(totalCell => {
+        const total = parseFloat(totalCell.textContent.replace('R$ ', '').replace(',', '.'));
+        subtotal += total;
+    });
+    subtotalSpan.textContent = subtotal.toFixed(2);
+}
+
+// Função para zerar o carrinho
+const botaoZerarCarrinho = document.getElementById('botaoZerarCarrinho');
+
+botaoZerarCarrinho.addEventListener('click', () => {
+    // Zera as quantidades dos produtos
+    inputsQuantidade.forEach(input => {
+        input.value = 0;
+    });
+
+    // Zera os totais dos produtos
+    document.querySelectorAll('.total').forEach(totalCell => {
+        totalCell.textContent = 'R$ 0,00';
+    });
+
+    // Zera o subtotal
+    atualizarSubtotal();
+});
+
+    </script>
+</body>
+</html>

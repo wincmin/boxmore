@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Loja Virtual</title>
+        <link rel="stylesheet" href="Pagina-inicial.css">
+        <script src="slide.js"></script>
+
+    </head>
+    <body>
+
+        
+        <header class="header">
+            <div class="container">
+                <h1>Minha Loja</h1>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li>
+                            <a href="#carrinho" class="carrinho-icon">
+                                🛒 <span id="carrinho-contagem">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <h3>Nossos Produtos</h3>
+        <section id="destaques" class="produtos">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="grid">
+
+                        <div class="produto">
+                            <div data-aos="zoom-in">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_771409-MLB52332889803_112022-O.webp "
+                                    alt="Produto 1">
+                                <h4>Produto 1</h4>
+                                <p>R$ 99,90</p>
+                                <button class="btn"
+                                    onclick="adicionarAoCarrinho('Produto 1', 99.90 )">Comprar</button>
+                            </div>
+
+                        </div>
+                        <div class="produto">
+                            <div data-aos="zoom-in">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_771409-MLB52332889803_112022-O.webp "
+                                    alt="Produto 1">
+                                <h4>Produto 1</h4>
+                                <p>R$ 99,90</p>
+                                <button class="btn"
+                                    onclick="adicionarAoCarrinho('Produto 1', 99.90 )">Comprar</button>
+                            </div>
+
+                        </div>
+                        <div class="produto">
+                            <div data-aos="zoom-in">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_771409-MLB52332889803_112022-O.webp "
+                                    alt="Produto 1">
+                                <h4>Produto 1</h4>
+                                <p>R$ 99,90</p>
+                                <button class="btn"
+                                    onclick="adicionarAoCarrinho('Produto 1', 99.90 )">Comprar</button>
+                            </div>
+
+                        </div>
+                        <div class="produto">
+                            <div data-aos="zoom-in">
+                                <img
+                                    src="https://http2.mlstatic.com/D_NQ_NP_771409-MLB52332889803_112022-O.webp "
+                                    alt="Produto 1">
+                                <h4>Produto 1</h4>
+                                <p>R$ 99,90</p>
+                                <button class="btn"
+                                    onclick="adicionarAoCarrinho('Produto 1', 99.90 )">Comprar</button>
+                            </div>
+
+                        </div>
+                        <div class="produto">
+                            <img
+                                src="https://http2.mlstatic.com/D_NQ_NP_608232-MLB49117413831_022022-O.webp"
+                                alt="Produto 2">
+                            <h4>Produto 2</h4>
+                            <p>R$ 199,90</p>
+                            <button class="btn" onclick="adicionarAoCarrinho('Produto 2', 199.90)">Comprar</button>
+                        </div>
+                        <div class="produto">
+                            <img
+                                src="https://http2.mlstatic.com/D_NQ_NP_806160-MLB49431713399_032022-O.webp"
+                                alt="Produto 3">
+                            <h4>Produto 3</h4>
+                            <p>R$ 299,90</p>
+                            <button class="btn" onclick="adicionarAoCarrinho('Produto 3', 299.90)">Comprar</button>
+                        </div>
+                        <div class="produto">
+                            <img
+                                src="https://http2.mlstatic.com/D_NQ_NP_806160-MLB49431713399_032022-O.webp"
+                                alt="Produto 4">
+                            <h4>Produto 4</h4>
+                            <p>R$ 299,90</p>
+                            <button class="btn" onclick="adicionarAoCarrinho('Produto 4', 299.90)">Comprar</button>
+                            
+
+                        </div>
+                        <div class="produto">
+                            <img
+                                src="https://http2.mlstatic.com/D_NQ_NP_806160-MLB49431713399_032022-O.webp"
+                                alt="Produto 4">
+                            <h4>Produto 4</h4>
+                            <p>R$ 299,90</p>
+                            <button class="btn" onclick="adicionarAoCarrinho('Produto 4', 299.90)">Comprar</button>
+
+                        </div>
+                        <div class="produto">
+                            <img
+                                src="https://http2.mlstatic.com/D_NQ_NP_806160-MLB49431713399_032022-O.webp"
+                                alt="Produto 4">
+                            <h4>Produto 4</h4>
+                            <p>R$ 299,90</p>
+                            <button class="btn" onclick="adicionarAoCarrinho('Produto 4', 299.90)">Comprar</button>
+
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button prev"
+                    onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-button next"
+                    onclick="moveSlide(1)">&#10095;</button>
+            </div>
+
+        </section>
+
+        <section id="carrinho" class="carrinho">
+            <div class="container">
+                <h3>Carrinho de Compras</h3>
+                <ul id="lista-carrinho"></ul>
+                <p id="total"></p>
+                <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </section>
+
+        <section id="pagamento" class="pagamento" style="display: none;">
+            <div class="container">
+                <h3>Escolha a Forma de Pagamento</h3>
+                <form id="form-pagamento" onsubmit="processarPagamento(event)">
+                    <label>
+                        <input type="radio" name="forma-pagamento"
+                            value="Cartão de Crédito" required>
+                        Cartão de Crédito
+                    </label><br>
+                    <label>
+                        <input type="radio" name="forma-pagamento"
+                            value="Boleto Bancário">
+                        Boleto Bancário
+                    </label><br>
+                    <label>
+                        <input type="radio" name="forma-pagamento" value="PIX">
+                        PIX
+                    </label><br>
+                    <button type="submit" class="btn">Pagar Agora</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="suporte" class="suporte">
+             <h3>Suporte</h3>
+            <div class="container">
+               
+                <p>Se precisar de ajuda, entre em contato conosco pelo email: suporte@minhaloja.com</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- <script src="Paina-inicial.js"></script> -->
+    </body>
+</html>
