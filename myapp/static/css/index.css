@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
+  
 }
 
 #patrao {
@@ -24,16 +25,9 @@ body {
     z-index: 1000;
     flex-wrap: nowrap !important; 
 
-    
-    
   
 }
 
-/* @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;  /* Permite que os itens quebrem linha em telas pequenas */
-  /* }
-} */ 
 
 .navbar-title {
   font-size: 1.5em;  
@@ -232,11 +226,12 @@ body {
   margin: 20px 0;
 }
 
-.produtos {
+#destaques .produtos {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+
 }
 
 .produto {
@@ -311,6 +306,7 @@ body {
 
 } */
 
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column; /* Alinha os itens em coluna em telas pequenas */
@@ -333,26 +329,46 @@ body {
 }
 
 
-/*
-
-
-
-
 asdasdkalshashdhdshfhllffdslfsdfdsfdsfdfllfhlklfdsa
 
 
-*/
 
-.modal-title {
+
+ .modal-title {
 
   text-align: center;
   width: 100%;
   margin: 0;
+} 
+
+#m-body {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
+ 
 }
 
-.modal-body {
+.modal-body input {
+  padding: 100px;
   text-align: center;
-  display: block;
-  padding: 20px;
-
+  width: 80%;
+  max-width: 300px; 
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  
 }
+
+.modal-footer {
+  display: flex;
+  justify-content: center; 
+  width: 100%;
+}
+
+.modal-footer .btn {
+  margin: 100 5px;
+} 
+
