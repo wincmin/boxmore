@@ -23,17 +23,20 @@ from myapp.views.carrinho import carrinho
 from myapp.views.pagamento import pagamento
 from myapp.views.sobrenos import sobrenos
 from myapp.views.home import busca_produtos
-from myapp.views.login import user_login
+from myapp.views.login import login
+from myapp.views.register import registro
+
 
 urlpatterns = [
 
-    path('', index, name='home'),
-    path('suporte', suporte, name='suporte'),
-    path('carrinho', carrinho, name='carrinho'),
-    path('pagamento', pagamento, name='pagamento'),
-    path('sobrenos', sobrenos, name='sobrenos'),
+    path('home/', index, name='home'),
+    path('suporte/', suporte, name='suporte'),
+    path('carrinho/', carrinho, name='carrinho'),
+    path('pagamento/', pagamento, name='pagamento'),
+    path('sobrenos/', sobrenos, name='sobrenos'),
     path('busca/', busca_produtos, name='busca_produtos'),
-    path('login/', user_login, name='login')
-    
+    path("login/", login, name="login"),
+    path('', registro, name='registro')
+
 
 ]
