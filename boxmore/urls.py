@@ -35,8 +35,8 @@ urlpatterns = [
     path('pagamento/', pagamento, name='pagamento'),
     path('sobrenos/', sobrenos, name='sobrenos'),
     path('busca/', busca_produtos, name='busca_produtos'),
-    path("login/", login, name="login"),
-    path('', registro, name='registro')
+    path("", login, name="login"),
+    path('registro/', registro, name='registro')
 
 
 ]

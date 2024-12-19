@@ -19,15 +19,15 @@
             // Aguarda 1 segundo antes de redirecionar
             setTimeout(() => {
                 window.location.href = "{% url 'login' %}"; 
-            }, 1000);
+            }, 2000);
         </script>
         {% endif %}
     
-        {% if error %}
+        {% comment %} {% if error %}
         <div class="message error">
             {{ error }}
         </div>
-        {% endif %}
+        {% endif %} {% endcomment %}
 
 
         <form method="POST" action="{% url 'registro' %}">

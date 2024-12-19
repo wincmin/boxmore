@@ -15,33 +15,36 @@
 
             <form method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
-            <div>
-                <label for="name">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu name..." required>
-            </div>
+                <div>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome..." required>
+                </div>
+                
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha..." required>
+                </div>
+                
+                    <button type="submit" id="loginBn">Entrar</button>
+                
+                </form>
+                
+                <a href="{% url 'register' %}" id="cadastrar" class="btn">Cadastrar</a>
+
+
             
-            <div>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha..." required>
-            </div>
-            
-                <button type="submit" id="loginBn">Entrar</button>
-                {% comment %} <button type="submit" id="cadastrar">
-                    <a href="{% url 'register' %}">Cadastrar</a>
-                </button> {% endcomment %}
-            </form>
             
 
             {% if success %}
             <div class="message success">
                 {{ success }}
             </div>
-            <script>
+            {% comment %} <script>
                 // Aguarda 1 segundo antes de redirecionar
                 setTimeout(() => {
                     window.location.href = "{% url 'home' %}";  // Substitua 'home' pela rota correta
                 }, 1000);
-            </script>
+            </script> {% endcomment %}
             {% endif %}
         
             {% if error %}
