@@ -3,31 +3,47 @@
 <head>
     <title>Mensagem de compra</title>
     <style>
-button {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     /* Adjust height as needed */
-    background-color: #8a2be2; /* Roxo */
-    padding: 20px;
-    
-    text-align: center;
-}
-div.mensagem {
-    font-size: 20px;
-    color: #A020F0;
-}
+        .modal {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .toggle-checkbox:checked ~ .modal {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .modal-content h2 {
+            color: #2c1a74;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="modal">
         <p id="mensagem">Sua compra foi relizada com sucesso</p>
         <button onclick="mostrarMensagem()">OK</button>
     <div>
