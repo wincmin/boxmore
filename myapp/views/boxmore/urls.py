@@ -23,14 +23,13 @@ from myapp.views.suporte import suporte
 from myapp.views.carrinho import carrinho
 from myapp.views.pagamento import pagamento
 from myapp.views.sobrenos import sobrenos
-from myapp.views.confirma_compra import confirmacao
 
 urlpatterns = [
 
         path('', index, name='home'),
         path('suporte', suporte, name='suporte'),
         path('carrinho', carrinho, name='carrinho'),
-        path('pagamento', pagamento, name='pagamento.html'),
+        path('pagamento', pagamento, name='pagamento'),
         path('sobrenos', sobrenos, name='sobrenos'),
         path('busca/', busca_produtos, name='busca_produtos')
 
