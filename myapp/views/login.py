@@ -1,5 +1,7 @@
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+import time  # Para adicionar um pequeno atraso
 import requests
-from django.shortcuts import render
 
 def login(request):
     if request.method == "POST":
@@ -21,12 +23,13 @@ def login(request):
                 # Retorna a mensagem de sucesso ao template
                 return render(request, "login.html", {
                     "success": response_data.get("message", "Login bem-sucedido!"),
-                    "redirect": True  # Sinaliza para redirecionar
                 })
+
             else:
                 return render(request, "login.html", {"error": response_data.get("message", "Erro no login.")})
 
         except requests.exceptions.RequestException as e:
             return render(request, "login.html", {"error": f"Erro ao conectar à API: {str(e)}"})
 
-    return render(request, "login.html")
+    # Redirecionar para a home após o login bem-sucedido (depois de mostrar a mensagem de sucesso)
+    return HttpResponseRedirect('/')

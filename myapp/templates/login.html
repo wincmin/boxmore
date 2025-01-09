@@ -17,7 +17,8 @@
                 {% csrf_token %}
                 <div>
                     <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" placeholder="Digite seu nome..." required>
+                    <input type="text" id="name" name="nome"
+                    placeholder="Digite seu nome..." required>
                 </div>
                 
                 <div>
@@ -28,23 +29,15 @@
                     <button type="submit" id="loginBn">Entrar</button>
                 
                 </form>
-                
+                <br>
                 <a href="{% url 'register' %}" id="cadastrar" class="btn">Cadastrar</a>
-
-
-            
             
 
             {% if success %}
             <div class="message success">
                 {{ success }}
             </div>
-            {% comment %} <script>
-                // Aguarda 1 segundo antes de redirecionar
-                setTimeout(() => {
-                    window.location.href = "{% url 'home' %}";  // Substitua 'home' pela rota correta
-                }, 1000);
-            </script> {% endcomment %}
+
             {% endif %}
         
             {% if error %}

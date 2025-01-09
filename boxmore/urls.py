@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
 from myapp.views.home import index
 from myapp.views.suporte import suporte
 from myapp.views.carrinho import carrinho
@@ -24,19 +25,17 @@ from myapp.views.pagamento import pagamento
 from myapp.views.sobrenos import sobrenos
 from myapp.views.home import busca_produtos
 from myapp.views.login import login
-from myapp.views.register import registro
+from myapp.views.register import register
 
 
 urlpatterns = [
-
     path('home/', index, name='home'),
     path('suporte/', suporte, name='suporte'),
     path('carrinho/', carrinho, name='carrinho'),
     path('pagamento/', pagamento, name='pagamento'),
     path('sobrenos/', sobrenos, name='sobrenos'),
     path('busca/', busca_produtos, name='busca_produtos'),
-    path("", login, name="login"),
-    path('registro/', registro, name='registro')
-
-
+    path('', login, name="login"),
+    path('register', register, name='register')  
 ]
+

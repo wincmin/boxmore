@@ -82,19 +82,7 @@ button a {
     border: 1px solid #f5c6cb;
 } */
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-}
 
-.btn:hover {
-    background-color: #0056b3;
-}
 
 .message.success {
     background-color: #D4EDDA;
@@ -103,4 +91,19 @@ button a {
     border: 1px solid #C3E6CB;
     border-radius: 5px;
     margin: 10px 0;
+}
+
+.bnt a{
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: white;
 }

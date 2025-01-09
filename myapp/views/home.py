@@ -22,11 +22,8 @@ def index(request):
 def busca_produtos(request):
   # Pegando os parâmetros da busca
     query = request.GET.get('query', '')  # Nome do produto
-    categoria = request.GET.get('categoria', '')  # Categoria
     marca = request.GET.get('marca', '')  # Marca
-    cor = request.GET.get('cor', '')  # Cor
-    preco_min = request.GET.get('preco_min', '')  # Preço mínimo
-    preco_max = request.GET.get('preco_max', '')  # Preço máximo
+    preco = request.GET.get('preco_min', '')  # Preço mínimo
 
     # URL da sua API Flask
     url_api = 'http://127.0.0.1:5000/produtos'
@@ -35,16 +32,12 @@ def busca_produtos(request):
     params = {}
     if query:
         params['nome_produto'] = query
-    if categoria:
-        params['categoria'] = categoria
     if marca:
         params['marca'] = marca
-    if cor:
-        params['cor'] = cor
-    if preco_min:
-        params['preco_min'] = preco_min
-    if preco_max:
-        params['preco_max'] = preco_max
+    if preco:
+        params['preco'] = preco
+    if preco:
+        params['preco'] = preco
 
     # Fazendo a requisição GET para a API Flask
     response = requests.get(url_api, params=params)

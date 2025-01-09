@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 import requests
 
-def registro(request):
+def register(request):
     if request.method == "POST":
         nome = request.POST.get("nome")
         senha = request.POST.get("senha")
