@@ -7,23 +7,14 @@
     <link rel="icon" href="static/img/loja1.png" type="image/png">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/pagamento.css' %}">
+    {% extens "carrinho.html" %}
 </head>
 <body>
 
     <div class="container">
         <h2>Pagamento</h2>
 
-        <form>
-            <div class="lista-compras">
-                <h3>Produtos</h3>
-                <ul>
-                    <li>Produto 1 - R$ 100,00</li>
-                    <li>Produto 2 - R$ 200,00</li>
-                    <li>Produto 3 - R$ 50,00</li>
-                    <li>Taxa de entrga - R$ 10,00</li>
-                </ul>
-                <p>Total: R$ 360,00</p>
-            </div>
+        {% block content %}
             <div class="informacoes-cliente">
                 <h3>Preencha seus dados:</h3>
 
